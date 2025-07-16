@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
     body {
-      background: url('https://i.imgur.com/kRXEQ2k.jpg') no-repeat center center fixed;
+      background: url('https://i.imgur.com/BHu3VQz.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
@@ -24,20 +24,20 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      max-width: 650px;
+      gap: 1.5rem;
+      max-width: 720px;
       margin: 2rem auto;
     }
 
     .gift-tile {
       font-size: 2rem;
-      background-color: #ffe4b5ee;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      background-color: #fff8dd;
+      padding: 2.5rem;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       cursor: pointer;
       position: relative;
-      min-height: 130px;
+      min-height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -45,18 +45,18 @@
     }
 
     .gift-tile:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
     .quote {
       display: none;
       position: absolute;
       inset: 0;
-      background: #ffffffee;
+      background: #fff;
       color: #333;
-      font-size: 0.95rem;
-      padding: 1rem;
-      border-radius: 15px;
+      font-size: 1rem;
+      padding: 1.5rem;
+      border-radius: 18px;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -77,9 +77,9 @@
     }
 
     .wish-section {
-      background: #ffffffcc;
+      background: #ffffffdd;
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 14px;
       margin-top: 3rem;
       max-width: 650px;
       margin-left: auto;
@@ -95,7 +95,7 @@
       margin-top: 2rem;
       font-size: 0.9rem;
       color: #222;
-      background: #ffffffbb;
+      background: #ffffffcc;
       padding: 1rem;
       border-radius: 8px;
       display: inline-block;
@@ -126,11 +126,11 @@
   <div class="grid">
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Wishing you a day full of love, laughter, and cake!”</div>
+      <div class="quote">“Wishing you joy, laughter, and cake!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“You’re a blessing to the world.”</div>
+      <div class="quote">“You're a blessing to the world.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
@@ -150,7 +150,7 @@
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“You deserve everything happy.”</div>
+      <div class="quote">“Wishing you everything happy!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
@@ -173,7 +173,7 @@
   </section>
 
   <footer>
-    Created with ❤️ for a magical birthday.
+    Created with ❤️ for your birthday surprise.
   </footer>
 
   <script>
