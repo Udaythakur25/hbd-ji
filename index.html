@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
     body {
-      background: url('https://i.imgur.com/yv3m3y9.jpg') no-repeat center center fixed;
+      background: url('https://i.imgur.com/7ut1B3n.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
@@ -19,6 +19,7 @@
       color: #ff4e50;
       margin-bottom: 1rem;
       font-size: 2.5rem;
+      text-shadow: 1px 1px 2px white;
     }
 
     .grid {
@@ -52,7 +53,7 @@
       display: none;
       position: absolute;
       inset: 0;
-      background: #fff;
+      background: #ffffffee;
       color: #333;
       font-size: 1rem;
       padding: 1.5rem;
@@ -117,11 +118,11 @@
   <h1>🎁 Happy Birthday! 🎉</h1>
   <p>Tap each gift to reveal your surprise!</p>
 
-  <!-- 🎵 Working Audio Setup -->
+  <!-- 🎵 Music Play Button -->
   <audio id="bgMusic">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f6f1100b07.mp3?filename=birthday-86576.mp3" type="audio/mpeg" />
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
   </audio>
-  <button class="audio-btn" onclick="document.getElementById('bgMusic').play(); this.textContent='🎶 Playing...'">▶️ Play Music</button>
+  <button class="audio-btn" onclick="document.getElementById('bgMusic').play(); this.textContent='🎶 Music Playing'">▶️ Play Music</button>
 
   <!-- 🎁 Gift Grid -->
   <div class="grid">
@@ -174,7 +175,7 @@
   </section>
 
   <footer>
-    Created with ❤️ and hamster love 🐹
+    Created with ❤️ and hamster hugs 🐹
   </footer>
 
   <script>
