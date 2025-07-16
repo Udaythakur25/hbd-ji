@@ -15,7 +15,7 @@
 
     h1 {
       color: #ff4e50;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .grid {
@@ -27,36 +27,43 @@
     }
 
     .gift-tile {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1/1;
+      font-size: 2.5rem;
+      background-color: #ffe4b5;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       cursor: pointer;
+      position: relative;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
     }
 
-    .gift-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
+    .gift-tile:hover {
+      transform: scale(1.05);
     }
 
     .quote {
       display: none;
       position: absolute;
       inset: 0;
-      background: #fff;
-      border-radius: 10px;
-      padding: 0.75rem;
-      font-size: 0.9rem;
+      background: #ffffff;
       color: #333;
+      font-size: 0.9rem;
+      padding: 1rem;
+      border-radius: 12px;
       align-items: center;
       justify-content: center;
       text-align: center;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    .gift-tile.revealed img {
+    .gift-tile.revealed {
+      background-color: #fff;
+    }
+
+    .gift-tile.revealed .emoji {
       display: none;
     }
 
@@ -84,60 +91,59 @@
 <body>
 
   <h1>🎁 Happy Birthday! 🎉</h1>
-  <p>Tap a gift box to reveal a surprise birthday quote!</p>
+  <p>Tap each gift to reveal your surprise!</p>
 
   <div class="grid">
-    <!-- 9 gift boxes -->
+    <!-- 9 Tiles -->
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“Wishing you joy, laughter, and cake!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“May your birthday be the start of something beautiful.”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“You're a blessing to the world.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Another adventure-filled year awaits. Happy Birthday!”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“May your dreams come true this year.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Count your blessings, not the candles.”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“Celebrate your uniqueness!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“You make the world brighter just by being in it.”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“You're aging like fine wine 🍷”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Cheers to you and your endless awesomeness!”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“Shine bright like the star you are!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Today is not the end of another year, but the start of a new one.”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“Wishing you everything happy!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Smile big. Laugh loud. Celebrate YOU!”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“You're loved more than you know.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“Wishing you sweet memories and cake too!”</div>
+      <div class="emoji">🎁</div>
+      <div class="quote">“To more memories and more cake!”</div>
     </div>
   </div>
 
-  <!-- Make a Wish -->
   <section class="wish-section">
     <h2>🎈 Make a Wish!</h2>
     <p>What do you dream of today?</p>
-    <form onsubmit="event.preventDefault(); alert('Wish sent to the stars! 🌟');">
+    <form onsubmit="event.preventDefault(); alert('Your wish is floating toward the stars! 🌟');">
       <input type="text" placeholder="Enter your wish..." required />
       <button type="submit">Send Wish</button>
     </form>
   </section>
 
   <footer>
-    Created with 💖 for a magical celebration.
+    Made with 💖 just for you.
   </footer>
 
   <script>
