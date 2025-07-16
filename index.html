@@ -7,31 +7,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
     body {
-      background: #fff8e7;
+      background: url('https://i.imgur.com/kRXEQ2k.jpg') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 2rem;
+      color: #333;
     }
 
     h1 {
       color: #ff4e50;
       margin-bottom: 1rem;
+      font-size: 2.5rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      max-width: 600px;
+      max-width: 650px;
       margin: 2rem auto;
     }
 
     .gift-tile {
-      font-size: 2rem;
-      background-color: #ffe4b5;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 2.5rem;
+      background-color: #ffe4b5ee;
+      padding: 2.25rem;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
       cursor: pointer;
       position: relative;
       aspect-ratio: 1/1;
@@ -49,11 +52,11 @@
       display: none;
       position: absolute;
       inset: 0;
-      background: #fff;
+      background: #ffffffdd;
       color: #333;
-      font-size: 0.95rem;
+      font-size: 1rem;
       padding: 1rem;
-      border-radius: 12px;
+      border-radius: 15px;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -74,72 +77,87 @@
     }
 
     .wish-section {
-      background: #dff0ff;
+      background: #ffffffcc;
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-top: 3rem;
-      max-width: 600px;
+      max-width: 650px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .wish-section h2 {
-      color: #0077cc;
+      color: red;
+      font-weight: bold;
     }
 
     footer {
       margin-top: 2rem;
       font-size: 0.9rem;
-      color: #777;
+      color: #222;
+      background: #ffffffbb;
+      padding: 1rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    input[type="text"] {
+      background: #f7f7f7;
+      color: #000;
     }
   </style>
 </head>
 <body>
 
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f6f1100b07.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
   <h1>🎁 Happy Birthday! 🎉</h1>
-  <p>Tap a gift box to reveal a surprise birthday quote!</p>
+  <p>Tap each gift to reveal your surprise!</p>
 
   <div class="grid">
-    <!-- 9 Tiles -->
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
+      <div class="quote">“Wishing you joy, laughter, and cake!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“May your birthday be the start of something beautiful.”</div>
+      <div class="quote">“You're a blessing to the world.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Another adventure-filled year awaits. Happy Birthday!”</div>
+      <div class="quote">“May your dreams come true this year.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Count your blessings, not the candles.”</div>
+      <div class="quote">“Celebrate your uniqueness!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“You make the world brighter just by being in it.”</div>
+      <div class="quote">“You're aging like fine wine 🍷”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Cheers to you and your endless awesomeness!”</div>
+      <div class="quote">“Shine bright like the star you are!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Today is not the end of another year, but the start of a new one.”</div>
+      <div class="quote">“Wishing you everything happy!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Smile big. Laugh loud. Celebrate YOU!”</div>
+      <div class="quote">“You're loved more than you know.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Wishing you sweet memories and cake too!”</div>
+      <div class="quote">“To more memories and more cake!”</div>
     </div>
   </div>
 
-  <!-- Make a Wish Section -->
+  <!-- Wish Section -->
   <section class="wish-section">
     <h2>🎈 Make a Wish!</h2>
     <p>What do you dream of today?</p>
@@ -150,7 +168,7 @@
   </section>
 
   <footer>
-    Created with 💖 for your birthday surprise.
+    Built with ❤️ by thakur25 • Happy Birthday Forever!
   </footer>
 
   <script>
