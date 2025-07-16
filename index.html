@@ -21,19 +21,14 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 1rem;
-      margin: 2rem 0;
       max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 2rem auto;
     }
 
     .gift-tile {
-      position: relative;
       width: 100%;
       aspect-ratio: 1/1;
-      background-color: #f3f3f3;
-      border-radius: 10px;
-      overflow: hidden;
+      position: relative;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
@@ -42,10 +37,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 12px;
       display: block;
     }
 
-    .gift-tile .quote {
+    .quote {
       position: absolute;
       inset: 0;
       background: #fff8e7;
@@ -56,7 +52,8 @@
       justify-content: center;
       text-align: center;
       font-size: 0.9rem;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
     .gift-tile.revealed img {
@@ -88,16 +85,17 @@
 
   <div class="grid">
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
       <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
       <div class="quote">“May your birthday be the start of something beautiful.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
       <div class="quote">“Another adventure-filled year awaits. Happy Birthday!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
-      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75"
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“You make the world brighter just by being in it.”
