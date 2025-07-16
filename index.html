@@ -30,14 +30,14 @@
     }
 
     .gift-tile {
-      font-size: 2.5rem;
+      font-size: 2rem;
       background-color: #ffe4b5ee;
-      padding: 2.25rem;
+      padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.15);
       cursor: pointer;
       position: relative;
-      aspect-ratio: 1/1;
+      min-height: 130px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -52,9 +52,9 @@
       display: none;
       position: absolute;
       inset: 0;
-      background: #ffffffdd;
+      background: #ffffffee;
       color: #333;
-      font-size: 1rem;
+      font-size: 0.95rem;
       padding: 1rem;
       border-radius: 15px;
       align-items: center;
@@ -105,27 +105,32 @@
       background: #f7f7f7;
       color: #000;
     }
+
+    .audio-btn {
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f6f1100b07.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
   <h1>🎁 Happy Birthday! 🎉</h1>
   <p>Tap each gift to reveal your surprise!</p>
 
+  <!-- 🎵 Audio Button -->
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_f6f1100b07.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="audio-btn" onclick="document.getElementById('bgMusic').play(); this.style.display='none'">▶️ Play Music</button>
+
+  <!-- 🎁 Gift Grid -->
   <div class="grid">
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Wishing you joy, laughter, and cake!”</div>
+      <div class="quote">“Wishing you a day full of love, laughter, and cake!”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“You're a blessing to the world.”</div>
+      <div class="quote">“You’re a blessing to the world.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
@@ -145,7 +150,7 @@
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
-      <div class="quote">“Wishing you everything happy!”</div>
+      <div class="quote">“You deserve everything happy.”</div>
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <div class="emoji">🎁</div>
@@ -157,7 +162,7 @@
     </div>
   </div>
 
-  <!-- Wish Section -->
+  <!-- 🎈 Wish Section -->
   <section class="wish-section">
     <h2>🎈 Make a Wish!</h2>
     <p>What do you dream of today?</p>
@@ -168,7 +173,7 @@
   </section>
 
   <footer>
-    Built with ❤️ by thakur25 • Happy Birthday Forever!
+    Created with ❤️ for a magical birthday.
   </footer>
 
   <script>
