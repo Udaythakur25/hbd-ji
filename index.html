@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Birthday Gift Puzzle</title>
+  <title>Birthday Puzzle</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
   <style>
@@ -24,51 +24,93 @@
     }
 
     .grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; max-width: 720px; margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 720px;
+      margin: 2rem auto;
     }
 
     .gift-tile {
-      font-size: 2rem; background: #fff8dd;
-      padding: 2.5rem; border-radius: 18px;
+      font-size: 2rem;
+      background-color: #fff8dd;
+      padding: 2.5rem;
+      border-radius: 18px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      cursor: pointer; position: relative;
+      cursor: pointer;
+      position: relative;
       min-height: 160px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: transform 0.2s ease;
     }
-    .gift-tile:hover { transform: scale(1.06); }
 
-    .quote {
-      display: none; position: absolute;
-      inset: 0; background: #ffffffee;
-      padding: 1.5rem; border-radius: 18px;
-      align-items: center; justify-content: center; text-align: center;
-      font-size: 1rem; line-height: 1.4;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    .gift-tile:hover {
+      transform: scale(1.06);
     }
 
-    .gift-tile.revealed .emoji { display: none; }
+    .quote {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: #ffffffee;
+      color: #333;
+      font-size: 1rem;
+      padding: 1.5rem;
+      border-radius: 18px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.4;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .gift-tile.revealed {
+      background-color: #fff;
+    }
+
+    .gift-tile.revealed .emoji {
+      display: none;
+    }
+
     .gift-tile.revealed .quote {
       display: flex;
     }
 
     .wish-section {
-      background: #ffffffdd; padding: 2rem;
-      border-radius: 14px; margin-top: 3rem;
-      max-width: 650px; margin: 0 auto;
+      background: #ffffffdd;
+      padding: 2rem;
+      border-radius: 14px;
+      margin-top: 3rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .wish-section h2 { color: red; font-weight: bold; }
+
+    .wish-section h2 {
+      color: red;
+      font-weight: bold;
+    }
 
     footer {
-      margin-top: 2rem; font-size: 0.9rem;
-      background: #ffffffcc; padding: 1rem;
-      border-radius: 8px; display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #222;
+      background: #ffffffcc;
+      padding: 1rem;
+      border-radius: 8px;
+      display: inline-block;
     }
-    input[type="text"] { background: #f7f7f7; }
+
+    input[type="text"] {
+      background: #f7f7f7;
+      color: #000;
+    }
 
     .audio-btn {
-      margin-top: 1rem; font-size: 1rem;
+      margin-top: 1rem;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -77,31 +119,53 @@
   <h1>🎁 Happy Birthday! 🎉</h1>
   <p>Tap each gift to reveal your surprise!</p>
 
-  <!-- Working Birthday Tune -->
+  <!-- 🎵 Music -->
   <audio id="bgMusic">
     <source src="https://www.orangefreesounds.com/wp-content/uploads/2016/06/Happy-birthday-song.mp3" type="audio/mpeg" />
   </audio>
   <button class="audio-btn" onclick="document.getElementById('bgMusic').play(); this.textContent='🎶 Music Playing'">▶️ Play Birthday Tune</button>
 
-  <!-- Gift Grid with Confetti -->
+  <!-- 🎁 Gift Tiles -->
   <div class="grid">
-    ${[...Array(9)].map((_, i) => `
-      <div class="gift-tile" onclick="openGift(this)">
-        <div class="emoji">🎁</div>
-        <div class="quote">“${[
-          'Wishing you joy, laughter, and cake!',
-          'You’re a blessing to the world.',
-          'May your dreams come true this year.',
-          'Celebrate your uniqueness!',
-          "You're aging like fine wine 🍷",
-          'Shine bright like the star you are!',
-          'You deserve everything happy.',
-          "You're loved more than you know.",
-          'To more memories and more cake!'
-        ][i]}”</div>
-      </div>`).join('')}
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“Wishing you joy, laughter, and cake!”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“You’re a blessing to the world.”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“May your dreams come true this year.”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“Celebrate your uniqueness!”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“You're aging like fine wine 🍷”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“Shine bright like the star you are!”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“You deserve everything happy.”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“You're loved more than you know.”</div>
+    </div>
+    <div class="gift-tile" onclick="openGift(this)">
+      <div class="emoji">🎁</div>
+      <div class="quote">“To more memories and more cake!”</div>
+    </div>
   </div>
 
+  <!-- 🎈 Wish Form -->
   <section class="wish-section">
     <h2>🎈 Make a Wish!</h2>
     <p>What do you dream of today?</p>
@@ -111,14 +175,21 @@
     </form>
   </section>
 
-  <footer>Created with ❤️ and hamster hugs 🐹</footer>
+  <footer>
+    Made with ❤️ and hamster hugs 🐹
+  </footer>
 
   <script>
     const jsConfetti = new JSConfetti();
-    function openGift(el) {
-      el.classList.add('revealed');
-      jsConfetti.addConfetti({ emojis: ['🎉','🎂','🎁'], emojiSize: 50, confettiNumber: 50 });
+    function openGift(tile) {
+      tile.classList.add('revealed');
+      jsConfetti.addConfetti({
+        emojis: ['🎉', '🎁', '🎂', '✨'],
+        emojiSize: 30,
+        confettiNumber: 50
+      });
     }
   </script>
+
 </body>
 </html>
