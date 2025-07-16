@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Birthday Gift Puzzle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        background-color: #fff8e7;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #ff4e50;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .gift {
+        background: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-HaSLO5ubU6OwZPfjrEwhXsf2/user-VmvzGqXoHqydtHvmYtHZC8pZ/img-6vGwhqK6BP3ntLRI1z1mR9Hz.png?st=2025-07-16T15%3A55%3A00Z&se=2025-07-16T17%3A55%3A00Z&sp=r&sv=2021-08-06&sr=b&sig=zjXAA9AXN3hRO45UyPaFrThpbQUk%2F1jsmWyx%2BLm4RO4%3D') center top no-repeat;
+        background-size: cover;
+        border-radius: 12px;
+        padding: 3rem;
+        height: 120px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .gift:hover {
+        transform: scale(1.05);
+      }
+      .quote {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255,255,255,0.95);
+        padding: 1rem;
+        border-radius: 12px;
+        height: 100%;
+        width: 100%;
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.3;
+        z-index: 1;
+      }
+      .gift.revealed .quote {
+        display: block;
+      }
+
+      .wish-section {
+        background: #dff0ff;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 3rem;
+      }
+
+      footer {
+        margin-top: 3rem;
+        font-size: 0.85rem;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎉 Happy Birthday! 🎁</h1>
+    <p>Click on each gift box to reveal a special birthday quote!</p>
+
+    <div class="grid">
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“May your birthday be the start of a year filled with good luck, good health, and much happiness.”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Another adventure-filled year awaits you. Happy birthday!”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Count your life by smiles, not tears. Count your age by friends, not years.”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Wishing you a day that is as special in every way as you are.”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Today is not the end of another year, but the start of a new one. Happy Birthday!”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Sending you smiles for every moment of your special day.”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“Let your birthday be filled with laughter, love, and cake!”</div>
+      </div>
+      <div class="gift" onclick="reveal(this)">
+        <div class="quote">“You deserve all the wonderful things life has to offer. Happy Birthday!”</div>
+      </div>
+    </div>
+
+    <section class="wish-section">
+      <h2>🎈 Make a Wish!</h2>
+      <p>What are your hopes and dreams for this special day?</p>
+      <form onsubmit="event.preventDefault(); alert('Your wish is on its way to the stars! 🌠');">
+        <input type="text" placeholder="Enter your birthday wish..." required />
+        <button type="submit">Send Wish</button>
+      </form>
+    </section>
+
+    <footer>
+      Created with 💖 for a magical celebration.
+    </footer>
+
+    <script>
+      function reveal(element) {
+        element.classList.add('revealed');
+      }
+    </script>
+  </body>
+</html>
