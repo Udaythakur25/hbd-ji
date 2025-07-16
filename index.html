@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Birthday Puzzle</title>
+  <title>Birthday Gift Puzzle</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
     body {
@@ -15,45 +15,45 @@
 
     h1 {
       color: #ff4e50;
+      margin-bottom: 0.5rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      max-width: 500px;
+      max-width: 400px;
       margin: 2rem auto;
     }
 
     .gift-tile {
+      position: relative;
       width: 100%;
       aspect-ratio: 1/1;
-      position: relative;
       cursor: pointer;
-      transition: transform 0.2s ease;
     }
 
     .gift-tile img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 10px;
       display: block;
     }
 
     .quote {
+      display: none;
       position: absolute;
       inset: 0;
-      background: #fff8e7;
+      background: #fff;
+      border-radius: 10px;
+      padding: 0.75rem;
+      font-size: 0.9rem;
       color: #333;
-      padding: 1rem;
-      display: none;
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 0.9rem;
-      border-radius: 12px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .gift-tile.revealed img {
@@ -69,6 +69,9 @@
       padding: 2rem;
       border-radius: 10px;
       margin-top: 3rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     footer {
@@ -81,9 +84,10 @@
 <body>
 
   <h1>🎁 Happy Birthday! 🎉</h1>
-  <p>Tap a gift to reveal a surprise birthday quote!</p>
+  <p>Tap a gift box to reveal a surprise birthday quote!</p>
 
   <div class="grid">
+    <!-- 9 gift boxes -->
     <div class="gift-tile" onclick="reveal(this)">
       <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
       <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
@@ -98,4 +102,49 @@
     </div>
     <div class="gift-tile" onclick="reveal(this)">
       <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
-      <div class="quote">“You make the world brighter just by being in it.”
+      <div class="quote">“Count your blessings, not the candles.”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“You make the world brighter just by being in it.”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“Cheers to you and your endless awesomeness!”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“Today is not the end of another year, but the start of a new one.”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“Smile big. Laugh loud. Celebrate YOU!”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://img.icons8.com/color/96/gift--v1.png" alt="Gift" />
+      <div class="quote">“Wishing you sweet memories and cake too!”</div>
+    </div>
+  </div>
+
+  <!-- Make a Wish -->
+  <section class="wish-section">
+    <h2>🎈 Make a Wish!</h2>
+    <p>What do you dream of today?</p>
+    <form onsubmit="event.preventDefault(); alert('Wish sent to the stars! 🌟');">
+      <input type="text" placeholder="Enter your wish..." required />
+      <button type="submit">Send Wish</button>
+    </form>
+  </section>
+
+  <footer>
+    Created with 💖 for a magical celebration.
+  </footer>
+
+  <script>
+    function reveal(tile) {
+      tile.classList.add("revealed");
+    }
+  </script>
+
+</body>
+</html>
