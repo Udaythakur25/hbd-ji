@@ -8,13 +8,12 @@
   <style>
     body {
       background: #fff8e7;
-      text-align: center;
       font-family: 'Segoe UI', sans-serif;
-      padding: 1rem;
+      text-align: center;
+      padding: 2rem;
     }
 
     h1 {
-      font-size: 2.5rem;
       color: #ff4e50;
     }
 
@@ -23,41 +22,49 @@
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 1rem;
       margin: 2rem 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .gift {
-      background: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-HaSLO5ubU6OwZPfjrEwhXsf2/user-VmvzGqXoHqydtHvmYtHZC8pZ/img-6vGwhqK6BP3ntLRI1z1mR9Hz.png?st=2025-07-16T15%3A55%3A00Z&se=2025-07-16T17%3A55%3A00Z&sp=r&sv=2021-08-06&sr=b&sig=zjXAA9AXN3hRO45UyPaFrThpbQUk%2F1jsmWyx%2BLm4RO4%3D') no-repeat center center;
-      background-size: 100px 100px;
-      width: 100px;
-      height: 100px;
-      margin: auto;
-      border-radius: 8px;
+    .gift-tile {
       position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      overflow: hidden;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
 
-    .gift:hover {
-      transform: scale(1.05);
-    }
-
-    .quote {
-      display: none;
-      background: #fff;
-      padding: 1rem;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #333;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    .gift.revealed {
-      background: none;
-    }
-
-    .gift.revealed + .quote {
+    .gift-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+    }
+
+    .gift-tile .quote {
+      position: absolute;
+      inset: 0;
+      background: #fff8e7;
+      color: #333;
+      padding: 1rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.9rem;
+      border-radius: 10px;
+    }
+
+    .gift-tile.revealed img {
+      display: none;
+    }
+
+    .gift-tile.revealed .quote {
+      display: flex;
     }
 
     .wish-section {
@@ -76,54 +83,21 @@
 </head>
 <body>
 
-  <h1>🎉 Happy Birthday! 🎁</h1>
-  <p>Click each gift to reveal a surprise quote!</p>
+  <h1>🎁 Happy Birthday! 🎉</h1>
+  <p>Tap a gift to reveal a surprise birthday quote!</p>
 
   <div class="grid">
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“May your birthday be the start of a year filled with happiness.”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Another adventure-filled year awaits you. Happy Birthday!”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Count your life by smiles, not tears. Count your age by friends, not years.”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Wishing you a day that is as special as you are.”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Let your birthday be filled with laughter, love, and cake!”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Sending smiles for every moment of your special day.”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“You deserve all the wonderful things life has to offer.”</div>
-
-    <div onclick="reveal(this)" class="gift"></div>
-    <div class="quote">“Today is not the end of another year, but the start of a new one.”</div>
-  </div>
-
-  <section class="wish-section">
-    <h2>🎈 Make a Wish!</h2>
-    <p>What are your hopes and dreams for this special day?</p>
-    <form onsubmit="event.preventDefault(); alert('Wish sent to the stars! 🌠');">
-      <input type="text" placeholder="Enter your birthday wish..." required />
-      <button type="submit">Send Wish</button>
-    </form>
-  </section>
-
-  <footer>Made with 💖 for someone very special.</footer>
-
-  <script>
-    function reveal(el) {
-      el.classList.add('revealed');
-    }
-  </script>
-
-</body>
-</html>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <div class="quote">“Wishing you a day filled with love, laughter, and joy!”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <div class="quote">“May your birthday be the start of something beautiful.”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75" alt="Gift" />
+      <div class="quote">“Another adventure-filled year awaits. Happy Birthday!”</div>
+    </div>
+    <div class="gift-tile" onclick="reveal(this)">
+      <img src="https://happybirthdaydeargift.vercel.app/_next/image?url=%2Fgift.jpeg&w=384&q=75"
